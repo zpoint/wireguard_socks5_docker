@@ -21,3 +21,5 @@ RUN mkdir /var/log/danted/
 RUN echo 'start() { sudo wg-quick up wg0; danted -D; }' >> ~/.bashrc && \
     echo 'stop() { sudo wg-quick down wg0; killall danted; }' >> ~/.bashrc && \
     echo "Done"
+
+ENTRYPOINT ["/bin/bash", "start"]

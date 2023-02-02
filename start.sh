@@ -14,7 +14,6 @@ if [ ! "$(docker ps -q -f name=NAME)" ]; then
     -p 9050:1080 \
     --volume "$(pwd)/config/wg0.conf:/etc/wireguard/wg0.conf" \
     --volume "$(pwd)/config/danted.conf:/etc/danted.conf" \
-    --entrypoint "/bin/bash -c 'start'" \
     $IMAGE
 
 fi
