@@ -4,7 +4,7 @@ NAME="wireguard_socks5"
 IMAGE="wireguard_socks5_img"
 
 # Start container (if not already started)
-if [ ! "$(docker ps -q -f name=$IMAGE)" ]; then
+if [ ! "$(docker ps -q -f name=NAME)" ]; then
 
     docker run \
     --hostname "${NAME}" \
@@ -15,11 +15,11 @@ if [ ! "$(docker ps -q -f name=$IMAGE)" ]; then
     -p 9050:1080 \
     --volume "$(pwd)/config/wg0.conf:/etc/wireguard/wg0.conf" \
     --volume "$(pwd)/config/danted.conf:/etc/danted.conf" \
-    $IMAGE
+    $IMAGE start
 
 fi
 
 # Connect to shell
 docker exec -it \
 	$NAME \
-	/bin/bash -c 'exec "${SHELL:-sh}"'
+	/bin/bash -c 'start'
