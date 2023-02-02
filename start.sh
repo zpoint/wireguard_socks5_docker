@@ -10,16 +10,11 @@ if [ ! "$(docker ps -q -f name=NAME)" ]; then
     --hostname "${NAME}" \
     --name "${NAME}" \
     --privileged \
-    --interactive \
     --detach \
     -p 9050:1080 \
     --volume "$(pwd)/config/wg0.conf:/etc/wireguard/wg0.conf" \
     --volume "$(pwd)/config/danted.conf:/etc/danted.conf" \
-    $IMAGE /bin/bash -c 'start'
+    $IMAGE --entrypoint "/bin/bash -c 'start'"
 
 fi
 
-# Connect to shell
-docker exec -it \
-	$NAME \
-	/bin/bash -c 'start'
