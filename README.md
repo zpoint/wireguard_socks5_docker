@@ -17,11 +17,15 @@ Consult your vpn vendor for config file, mine is [PureVPN](https://support.purev
 
 Start the container and runs the server
 
-	./start.sh
+	bash ./start.sh
+
+Test if it works on your **host** after starts the server
+
+	bash ./test.sh
 
 Stop the container and stop the server
 
-	./stop.sh
+	bash ./stop.sh
 
 ---
 
@@ -34,16 +38,10 @@ The container simply has an OpenVPN installation and a network interface `wg0` f
 
 ## Troubleshooting
 
-Test if it work on your **host** after starts the server
-
-	./test.sh
-
-
-## Fail case
 
 Attach to container
 
-    ./shell.sh
+    bash ./shell.sh
 
 Check `danted`'s log
 

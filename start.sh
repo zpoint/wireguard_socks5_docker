@@ -16,6 +16,6 @@ $IMAGE
 
 docker exec \
 	$NAME \
-	/bin/bash -c 'start'
+	/bin/bash -c 'source ~/.bashrc && start'
 
 
