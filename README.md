@@ -36,14 +36,14 @@ The container simply has an OpenVPN installation and a network interface `wg0` f
 
 Test if it work on your **host** after starts the server
 
-	curl --socks5 localhost:9050 http://ipinfo.io/
+	./test.sh
 
 
 ## Fail case
 
 Attach to container
 
-    docker exec -it wireguard_socks5 bash
+    ./shell.sh
 
 Check `danted`'s log
 
