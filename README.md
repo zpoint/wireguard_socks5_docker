@@ -8,7 +8,7 @@ Host <-> socks5 <-> Docker container <-> Wireguard
 
 Build the container
 
-	./build.sh
+	bash ./build.sh
 
 ## Usage
 
